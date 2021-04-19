@@ -15,13 +15,13 @@ public class CitiesController {
 
     @Autowired
     public List<String>  cityRepository = Stream.of("Coruña", "Vigo", "Ourense", "Pontevedra").collect(Collectors.toList());
-    @GetMapping("/rest/cities")
+    @GetMapping("/cities")
     public String[] getCities(@RequestParam(value = "value", required = false) String value) {
         List<String> cities = null;
             cities = (List<String>) cityRepository;
         return cities.toArray(new String[0]);
     }
-    @GetMapping("/rest/city/{id}")
+    @GetMapping("/city/{id}")
     public String getCityById(@PathVariable Long id) {
         String city = cityRepository.get(id.intValue());
         return city;
