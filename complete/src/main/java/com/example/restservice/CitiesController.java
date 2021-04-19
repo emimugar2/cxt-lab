@@ -2,6 +2,7 @@ package com.example.restservice;
 import com.example.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,10 @@ public class CitiesController {
     public CitiesController(){
         cityRepository.add(new Cities(1, "Coruña", "Coruña"));
         cityRepository.add(new Cities(2, "Pontevedra", "Pontevedra"));
+		cityRepository.add(new Cities(3, "Santiago", "Coruña"));
+		cityRepository.add(new Cities(4, "Lugo", "Lugo"));
+		cityRepository.add(new Cities(5, "Ourense", "Ourense"));
+		cityRepository.add(new Cities(6, "Vigo", "Pontevedra"));
     }
     @GetMapping("/cities")
     public ArrayList<Cities> getCities() {
