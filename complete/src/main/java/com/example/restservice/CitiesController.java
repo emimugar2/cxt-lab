@@ -22,14 +22,17 @@ public class CitiesController {
 		cityRepository.add(new Cities(6, "Vigo", "Pontevedra"));
     }
     @GetMapping("/cities")
-    public String[] getCities(@RequestParam(value = "value", required = false) String value) {
-        List<String> cities = null;
-        cities = (List<String>) cityRepository;
-        return cities.toArray(new String[0]);
+    public ArrayList<Cities> getCities() {
+        return cityRepository;
     }
     @GetMapping("/city/{id}")
-    public String getCityById(@PathVariable Long id) {
-        String city = cityRepository.get(id.intValue());
-        return city;
+    public Cities getCityById(@PathVariable ("id") int id) {
+        for (int i=0;i<cityRepository.size(); i++) {
+            Cities ciudad = cityRepository.get(i);
+            if (ciudad.getId()==id) {
+                return ciudad;
+                }
+        }
+        return new Cities(404, "No existe", "TAbarnia");
     }
 }
