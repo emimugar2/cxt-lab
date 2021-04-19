@@ -1,8 +1,6 @@
 package com.example.restservice;
+import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CitiesController {
 
     @Autowired
-    public List<String>  cityRepository = Stream.of("Coruña", "Vigo", "Ourense", "Pontevedra").collect(Collectors.toList());
+    public List<String>  cityRepository = Arrays.asList("Coruña", "Vigo", "Ourense", "Pontevedra");
     @GetMapping("/cities")
     public String[] getCities(@RequestParam(value = "value", required = false) String value) {
         List<String> cities = null;
