@@ -21,7 +21,7 @@ public class Criptos {
         return name;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 }
