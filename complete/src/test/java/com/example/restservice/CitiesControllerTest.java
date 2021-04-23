@@ -13,17 +13,21 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-@SpringBootTest
+@SpringBootTest(classes=com.example.restservice.RestServiceApplication.class)
 @AutoConfigureMockMvc
-public class HelloControllerTest {
+public class CitiesControllerTest {
 
-	@Autowired
-	private MockMvc mvc;
+    @Autowired
+    private MockMvc mvc;
 
-	@Test
-	public void getHello() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andExpect(content().string(equalTo("Greetings from Spring Boot!")));
-	}
+    @Test
+    public void getCities() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/cities").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+    @Test
+    public void getCity() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/city/1").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
 }
