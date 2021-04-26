@@ -28,6 +28,6 @@ public class CitiesControllerTest {
     @Test
     public void getCity() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/city/1").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk()).andExpect(jsonPath("$.id", is(1)));
     }
 }
