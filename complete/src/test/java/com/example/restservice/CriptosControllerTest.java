@@ -21,8 +21,13 @@ public class CriptosControllerTest {
     private MockMvc mvc;
 
     @Test
-    public void getCities() throws Exception {
+    public void getCriptos() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/criptos").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+    @Test
+    public void getCripto() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/cripto/1").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 }

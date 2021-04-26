@@ -25,4 +25,14 @@ public class CriptosController {
     public ArrayList<Criptos> getCriptos() {
         return criptoRepository;
     }
+    @GetMapping("/cripto/{id}")
+    public Criptos getCriptoById(@PathVariable ("id") int id) {
+        for (int i=0;i<criptoRepository.size(); i++) {
+            Criptos cripto = criptoRepository.get(i);
+            if (cripto.getId()==id) {
+                return cripto;
+            }
+        }
+        return new Criptos(404, "No existe", 666);
+    }
 }
