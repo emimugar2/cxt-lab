@@ -28,6 +28,6 @@ public class CriptosControllerTest {
     @Test
     public void getCripto() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/cripto/1").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk()).andExpect(jsonPath("$.id", is(1))).andExpect(jsonPath("$.price", is(1.20)));
+                .andExpect(status().isOk()).andExpect(jsonPath("$.name", is("ADA")));
     }
 }
