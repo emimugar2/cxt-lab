@@ -3,3 +3,7 @@ jdk:
 - openjdk8
 script:
 - test/run.sh
+notifications:
+  webhooks: 
+    - https://udcgal.webhook.office.com/webhookb2/e0c31196-b84c-436c-96cd-0065ed98535c@cea1ea3e-60b2-4f75-a6c2-a6022e8f961b/TravisCI/aee3e52f650e4ceba8c14cd553db680d/4b2bd2d5-5b42-448f-aac0-1b408dac317f
+
