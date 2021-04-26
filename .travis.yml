@@ -5,5 +5,5 @@ script:
 - test/run.sh
 notifications:
   webhooks: 
-    - https://udcgal.webhook.office.com/webhookb2/e0c31196-b84c-436c-96cd-0065ed98535c@cea1ea3e-60b2-4f75-a6c2-a6022e8f961b/TravisCI/aee3e52f650e4ceba8c14cd553db680d/4b2bd2d5-5b42-448f-aac0-1b408dac317f
-
+    - https://udcgal.webhook.office.com/webhookb2/55d5dbcf-909c-49a8-8240-dcb233d26c77@cea1ea3e-60b2-4f75-a6c2-a6022e8f961b/TravisCI/87a0aeb6e29e48808fd719f9764e9607/35878188-0c2a-41d3-936e-4765061729c7
+    
