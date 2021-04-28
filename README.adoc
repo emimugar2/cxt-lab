@@ -192,6 +192,7 @@ viewControllerHandlerMapping
 ----
 ====
 
+
 You can clearly see `org.springframework.boot.autoconfigure` beans. There is also a `tomcatEmbeddedServletContainerFactory`.
 
 Now run the service with curl (in a separate terminal window), by running the following
